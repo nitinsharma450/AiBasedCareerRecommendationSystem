@@ -11,7 +11,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      let response = await fetch("http://localhost:7777/api/user/search", {
+      let response = await fetch("https://career-backend-r0ysi3moh-nitinsharma1059-1842s-projects.vercel.app/api/user/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
