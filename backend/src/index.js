@@ -6,7 +6,11 @@ import { userRoutes } from './userRoutes.js';
 const app = express();
 
 // CORS configuration
-app.use(cors());
+app.use(cors({
+ origin:'https://vision-path-qdyd0179z-nitinsharma1059-1842s-projects.vercel.app'
+}
+ 
+));
 
 
 
