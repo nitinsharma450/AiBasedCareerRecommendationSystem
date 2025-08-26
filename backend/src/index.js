@@ -15,10 +15,15 @@ app.use(cors({
 
 
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running on Render!");
+});
 
 // Your API routes
 app.use('/api', userRoutes);
 
-app.listen(serverConfigs.PORT, () => {
-    console.log(`✅ Server running on ${serverConfigs.HOST}:${serverConfigs.PORT}`);
+const PORT =  serverConfigs.PORT || 7777;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
+
