@@ -4,6 +4,9 @@ import CareerRecommandation from "./pages/CareerRecommandation"
 import Layout from "./component/Layout"
 import Signup from "./pages/Signup"
 import { ToastContainer } from "react-toastify"
+ 
+import Login from "./pages/Login"
+import Logout from "./pages/Logout"
 
 
  
@@ -30,6 +33,8 @@ function App() {
      
      <Routes>
       <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route  path="/logout" element={<Logout />}/>
       <Route element={<Layout />}>
 <Route path="/" element={<CareerRecommandation />} />
        </Route>

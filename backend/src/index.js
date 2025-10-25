@@ -7,7 +7,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: "https://vision-path-qdyd0179z-nitinsharma1059-1842s-projects.vercel.app", // frontend URL
+  origin: "http://localhost:5173", // frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

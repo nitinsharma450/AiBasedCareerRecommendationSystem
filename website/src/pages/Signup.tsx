@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { ApiConfigs } from "../lib/ApiConfigs";
 
 export default function Signup() {
+let navigate=useNavigate()
+
   const [errors, setError] = useState<any>({});
   const [signupForm, setSignupForm] = useState<any>({
     fname: "",
@@ -45,12 +49,12 @@ export default function Signup() {
 
     setError(newErrors);
 
-    // 🚨 If there are errors, stop here
+     
     if (Object.keys(newErrors).length > 0) return;
 
-    // ✅ API call
+   
     try {
-      let response = await fetch("https://vision-path-as7x.onrender.com/api/user/signup", {
+      let response = await fetch(`${ApiConfigs.Endpoint}/user/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(signupForm),
@@ -59,6 +63,7 @@ export default function Signup() {
      let jsonResponse= await  response.json()
      if(jsonResponse.status==200){
         toast.success('signup successfully')
+        navigate('/login')
      }
      else{
        toast.error('signup failed')
