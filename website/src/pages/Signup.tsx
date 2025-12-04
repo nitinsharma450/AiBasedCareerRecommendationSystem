@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { ApiConfigs } from "../lib/ApiConfigs";
+
 
 export default function Signup() {
 let navigate=useNavigate()
