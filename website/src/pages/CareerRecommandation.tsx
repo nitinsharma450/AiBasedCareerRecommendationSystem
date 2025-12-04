@@ -35,7 +35,7 @@ export default function App() {
       }
 
       if (await AuthenticationService.isAuthenticated()) {
-        let response = await fetch("http://localhost:7777/api/user/search", {
+        let response = await fetch(`${import.meta.env.VITE_BACKEND_ENDPOINT}user/search`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

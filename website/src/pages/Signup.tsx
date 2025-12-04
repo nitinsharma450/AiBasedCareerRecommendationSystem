@@ -54,12 +54,14 @@ let navigate=useNavigate()
 
    
     try {
-      let response = await fetch(`${ApiConfigs.Endpoint}/user/signup`, {
+      let response = await fetch(`${import.meta.env.VITE_BACKEND_ENDPOINT}user/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(signupForm),
       });
-
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
      let jsonResponse= await  response.json()
      if(jsonResponse.status==200){
         toast.success('signup successfully')
