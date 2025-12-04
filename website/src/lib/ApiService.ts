@@ -1,4 +1,4 @@
-import { ApiConfigs } from "./ApiConfigs.js";
+
 import { AuthenticationService } from "./AuthencationService.js";
 
  
@@ -19,7 +19,7 @@ export async function Api(
       headers["Authorization"] = `Bearer ${token}`;
     }
 
-    const response = await fetch(`${ApiConfigs.Endpoint}${endpoint}`, {
+    const response = await fetch(`${import.meta.env.BACKEND_ENDPOINT}${endpoint}`, {
       method: "POST",
       body:  JSON.stringify(body),
       headers,
