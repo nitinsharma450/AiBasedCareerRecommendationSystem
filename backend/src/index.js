@@ -8,14 +8,10 @@ const app = express();
 dotenv.config()
 
 // CORS configuration
-app.use(cors({
-  origin: "http://localhost:5173", // frontend URL
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
-
+  
 // Your API routes
 app.use('/api', userRoutes);
 
