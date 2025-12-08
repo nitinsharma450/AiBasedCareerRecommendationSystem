@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowUp, FaBars } from "react-icons/fa";
 
-import { ApiConfigs } from "../lib/ApiConfigs";
+// import { ApiConfigs } from "../lib/ApiConfigs";
 
 import { useNavigate } from "react-router";
 import { CgAttachment } from "react-icons/cg";
@@ -28,13 +28,13 @@ export default function App() {
       setMessages(newMessages);
       setPrompt("");
 
-      let res = localStorage.getItem(ApiConfigs.userLocalStorage);
-      let usableData: any;
-      if (res) {
-        usableData = JSON.parse(res);
-      } else {
-        console.log("No data found in localStorage");
-      }
+      // let res = localStorage.getItem(ApiConfigs.userLocalStorage);
+      // let usableData: any;
+      // if (res) {
+      //   usableData = JSON.parse(res);
+      // } else {
+      //   console.log("No data found in localStorage");
+      // }
 
    console.log("Backend:", import.meta.env.VITE_BACKEND_ENDPOINT);
 
