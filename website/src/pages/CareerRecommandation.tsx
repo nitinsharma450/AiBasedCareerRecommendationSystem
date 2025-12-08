@@ -36,6 +36,7 @@ export default function App() {
         console.log("No data found in localStorage");
       }
 
+     
       
         let response = await fetch(`${import.meta.env.VITE_BACKEND_ENDPOINT}user/search`, {
           method: "POST",
