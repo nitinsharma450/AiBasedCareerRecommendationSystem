@@ -217,7 +217,8 @@ export default function App() {
           disabled={loading || !prompt.trim()}
         >
           {loading ? (
-            <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+           <div className="animate-spin h-5 w-5 border-2 border-blue-300 border-t-transparent rounded-full"></div>
+
           ) : (
             <FaArrowUp size={20} color="white" />
           )}
