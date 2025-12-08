@@ -36,13 +36,14 @@ export default function App() {
         console.log("No data found in localStorage");
       }
 
-     
+   console.log("Backend:", import.meta.env.VITE_BACKEND_ENDPOINT);
+
       
         let response = await fetch(`${import.meta.env.VITE_BACKEND_ENDPOINT}user/search`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${usableData.token}`,
+            // Authorization: `Bearer ${usableData.token}`,
           },
           body: JSON.stringify({ prompt }),
         });
