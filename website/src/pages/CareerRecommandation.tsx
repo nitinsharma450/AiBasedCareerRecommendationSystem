@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaArrowUp, FaBars } from "react-icons/fa";
 
 import { ApiConfigs } from "../lib/ApiConfigs";
-import { AuthenticationService } from "../lib/AuthencationService";
+
 import { useNavigate } from "react-router";
 import { CgAttachment } from "react-icons/cg";
 import ReactMarkdown from "react-markdown";
@@ -36,7 +36,7 @@ export default function App() {
         console.log("No data found in localStorage");
       }
 
-      if (await AuthenticationService.isAuthenticated()) {
+      
         let response = await fetch(`${import.meta.env.VITE_BACKEND_ENDPOINT}user/search`, {
           method: "POST",
           headers: {
@@ -54,9 +54,7 @@ export default function App() {
           ...newMessages,
           { role: "ai", content: jsonresponse.data || "No response" },
         ]);
-      } else {
-        navigate("/login");
-      }
+      
     } catch (error) {
       console.error("❌ Error while fetching:", error);
     } finally {

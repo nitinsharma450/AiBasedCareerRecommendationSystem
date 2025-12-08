@@ -8,7 +8,7 @@ export const userRoutes = express.Router();
 userRoutes.post('/user/signup',userApi.signup)
 userRoutes.post('/user/login',userApi.login)
 
-userRoutes.use(userMiddleware)
+// userRoutes.use(userMiddleware)
 
 userRoutes.post("/user/search", userApi.searchPrompt);
 userRoutes.post('/user/details',userApi.search)
